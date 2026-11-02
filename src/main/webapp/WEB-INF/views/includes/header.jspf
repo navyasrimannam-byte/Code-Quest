@@ -1,0 +1,20 @@
+<%@ page import="com.codequest.util.Html" %>
+<header class="topbar">
+    <a class="brand" href="<%= request.getContextPath() %>/index.html"><span class="brand-mark">CQ</span><span>CODEQUEST</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="<%= request.getContextPath() %>/missions">Missions</a>
+        <a class="nav-link" href="<%= request.getContextPath() %>/leaderboard">Leaderboard</a>
+        <% if (session.getAttribute("adminId") != null) { %>
+            <a class="nav-link" href="<%= request.getContextPath() %>/admin/dashboard">Admin</a>
+            <a class="button button-small button-quiet" href="<%= request.getContextPath() %>/admin/logout">Log out</a>
+        <% } else if (session.getAttribute("userId") != null) { %>
+            <a class="nav-link" href="<%= request.getContextPath() %>/dashboard">Dashboard</a>
+            <a class="button button-small button-quiet" href="<%= request.getContextPath() %>/logout">Log out</a>
+        <% } else { %>
+            <a class="nav-link" href="<%= request.getContextPath() %>/admin-login.jsp">Admin</a>
+            <a class="button button-small button-quiet" href="<%= request.getContextPath() %>/login.jsp">Log in</a>
+            <a class="button button-small button-primary" href="<%= request.getContextPath() %>/register.jsp">Join free <span aria-hidden="true">↗</span></a>
+        <% } %>
+    </nav>
+</header>
+<main>

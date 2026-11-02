@@ -1,0 +1,4 @@
+</main>
+<footer class="site-footer shell"><a class="brand footer-brand" href="<%= request.getContextPath() %>/index.html"><span class="brand-mark">CQ</span><span>CODEQUEST</span></a><span class="mono footer-note">PRACTICE MAKES PROGRESS.</span><a class="footer-link" href="<%= request.getContextPath() %>/missions">Back to missions <span aria-hidden="true">→</span></a></footer>
+</body>
+</html>
